@@ -1,12 +1,25 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
 use 5.006;
+
 use ExtUtils::MakeMaker;
+
 WriteMakefile(
-    NAME            => 'Labyrinth::Plugin::Requests',
-    VERSION_FROM    => 'lib/Labyrinth/Plugin/Requests.pm',
-    PREREQ_PM       => {
-        'Labyrinth'         => '5.03'
-    },
-    NO_META     => 1,
-    ABSTRACT    => 'Requests plugin for the Labyrinth framework',
-    AUTHOR      => 'Barbie <barbie@cpan.org>',
+    AUTHOR              => 'Barbie <barbie@cpan.org>',
+    NAME                => 'Labyrinth::Plugin::Requests',
+    VERSION_FROM        => 'lib/Labyrinth/Plugin/Requests.pm',
+    ABSTRACT            => 'Requests handler for the Labyrinth framework',
+    NO_META             => 1,
+    PREREQ_PM           => {
+
+        # prereqs
+        'Labyrinth'             => '5.03',
+
+        # build/test prereqs
+        'IO::File'              => '0',
+        'Test::More'            => '0.70'
+
+    }
 );

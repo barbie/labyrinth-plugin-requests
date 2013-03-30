@@ -1,37 +1,39 @@
-Labyrinth::Plugin::ReqUsersContributed Perl DocuLabyrinth::Plugin::Requests(3)
+Labyrinth-Plugin-Requests
+=========================
 
+This distribution contains the request handling functionality for the Labyrinth
+Web Framework. 
 
+INSTALLATION
 
-NAME
-       Labyrinth::Plugin::Requests - Requests administration for the Labyrinth
-       framework.
+To install this module type the following:
 
-DESCRIPTION
-       Contains all the request administration functionality for Labyrinth.
+   perl Makefile.PL
+   make
+   make test
+   make install
 
-ADMIN INTERFACE METHODS
-       Admin
-       Add
-       Edit
-       Save
-       Delete
-       SecureSelect
-       SecureName
+DEPENDENCIES
 
-SEE ALSO
-       Labyrinth
+This module requires these modules:
 
-AUTHOR
-       Barbie, <barbie@missbarbell.co.uk> for Miss Barbell Productions,
-       <http://www.missbarbell.co.uk/>
+  Labyrinth
 
-COPYRIGHT & LICENSE
-         Copyright (C) 2002-2011 Barbie for Miss Barbell Productions
-         All Rights Reserved.
+For testing the module requires these modules:
 
-         This module is free software; you can redistribute it and/or
-         modify it under the Artistic License 2.0.
+  IO::File
+  Test::More
 
+For optional testing the module would like these modules:
 
+  Test::CPAN::Meta
+  Test::CPAN::Meta::JSON
+  Test::Pod
+  Test::Pod::Coverage
 
-perl v5.10.1                      2011-01-19    Labyrinth::Plugin::Requests(3)
+COPYRIGHT AND LICENSE
+
+  Copyright (C) 2002-2013 Barbie for Miss Barbell Productions
+
+  This distribution is free software; you can redistribute it and/or
+  modify it under the Artistic Licence v2.
