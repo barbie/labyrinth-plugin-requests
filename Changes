@@ -1,9 +1,11 @@
 Changes for the Labyrinth-Plugin-Requests
 
+1.01	2013-03-30
         - change file dates changed to meet W3CDTF standards.
         - added minimum perl version (5.006).
         - reworked Makefile.PL for clarity.
         - upgraded to Test::CPAN::Meta::JSON for tests.
+        - test suite update.
 
 1.00	2011-01-20
 	    - first official release

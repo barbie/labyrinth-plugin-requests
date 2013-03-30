@@ -4,11 +4,11 @@ use warnings;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '1.00';
+$VERSION = '1.01';
 
 =head1 NAME
 
-Labyrinth::Plugin::Requests - Requests administration for the Labyrinth framework.
+Labyrinth::Plugin::Requests - Requests handler for the Labyrinth framework.
 
 =head1 DESCRIPTION
 
@@ -202,7 +202,7 @@ Miss Barbell Productions, L<http://www.missbarbell.co.uk/>
 
 =head1 COPYRIGHT & LICENSE
 
-  Copyright (C) 2002-2011 Barbie for Miss Barbell Productions
+  Copyright (C) 2002-2013 Barbie for Miss Barbell Productions
   All Rights Reserved.
 
   This module is free software; you can redistribute it and/or
