@@ -1,5 +1,5 @@
 --- #YAML:1.0
-name:                     Labyrinth::Plugin::Requests
+name:                     Labyrinth-Plugin-Requests
 version:                  1.01
 abstract:                 Requests handler for the Labyrinth framework
 author:

@@ -1,4 +1,7 @@
 Changes for the Labyrinth-Plugin-Requests
+=========================================
+
+        - fixed distribution name in META.
 
 1.01	2013-03-30
         - change file dates changed to meet W3CDTF standards.
