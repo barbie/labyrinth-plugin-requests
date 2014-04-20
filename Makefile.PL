@@ -15,7 +15,7 @@ WriteMakefile(
     PREREQ_PM           => {
 
         # prereqs
-        'Labyrinth'             => '5.03',
+        'Labyrinth'             => '5.20',
 
         # build/test prereqs
         'IO::File'              => '0',
