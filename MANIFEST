@@ -1,5 +1,6 @@
 Changes
 lib/Labyrinth/Plugin/Requests.pm
+LICENSE
 Makefile.PL
 MANIFEST
 META.json
