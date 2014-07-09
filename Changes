@@ -1,6 +1,8 @@
 Changes for the Labyrinth-Plugin-Requests
 =========================================
 
+        - Exporter tag ':default in Labyrinth::Globals no longer used.
+
 1.02	2014-04-26
         - fixed distribution name in META.
         - added LICENSE file.

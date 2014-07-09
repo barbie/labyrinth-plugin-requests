@@ -22,7 +22,7 @@ Contains all the request administration functionality for Labyrinth.
 use base qw(Labyrinth::Plugin::Base);
 
 use Labyrinth::Audit;
-use Labyrinth::Globals  qw(:default);
+use Labyrinth::Globals;
 use Labyrinth::DBUtils;
 use Labyrinth::MLUtils;
 use Labyrinth::Support;
