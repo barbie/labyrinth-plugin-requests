@@ -96,17 +96,31 @@ my @types = map {{'id'=>$_,'value'=> $types{$_}}} sort keys %types;
 
 =item Admin
 
+Handle main administrive duties, and display requests admin page.
+
 =item Add
+
+Add a request.
 
 =item Edit
 
+Edit a request.
+
 =item Save
+
+Save a request.
 
 =item Delete
 
+Delete one or more requests.
+
 =item SecureSelect
 
+Security selection box. This denotes whether request requires SSL.
+
 =item SecureName
+
+Give an id, returns the security status.
 
 =back
 
