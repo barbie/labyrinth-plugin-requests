@@ -1,6 +1,7 @@
 Changes for the Labyrinth-Plugin-Requests
 =========================================
 
+1.03	2014-07-14
         - Exporter tag ':default in Labyrinth::Globals no longer used.
         - now require Labyrinth-5.22.
 
