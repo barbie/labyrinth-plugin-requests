@@ -52,6 +52,7 @@
     },
 
     "resources": {
+        "homepage": "http://labyrinth.missbarbell.co.uk",
         "license": [ "http://www.perlfoundation.org/artistic_license_2_0" ],
         "bugtracker": { "web": "http://rt.cpan.org/Public/Dist/Display.html?Name=Labyrinth-Plugin-Requests" },
         "repository": {

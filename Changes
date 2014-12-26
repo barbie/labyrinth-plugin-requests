@@ -2,6 +2,7 @@ Changes for the Labyrinth-Plugin-Requests
 =========================================
 
         - fixed license fields in META.json to be lists.
+        - added homepage resource to META files.
 
 1.03	2014-07-14
         - Exporter tag ':default in Labyrinth::Globals no longer used.
