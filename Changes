@@ -1,6 +1,8 @@
 Changes for the Labyrinth-Plugin-Requests
 =========================================
 
+        - extended META test suite.
+
 1.04	2014-12-27
         - fixed license fields in META.json to be lists.
         - added homepage resource to META files.
@@ -21,4 +23,4 @@ Changes for the Labyrinth-Plugin-Requests
         - test suite update.
 
 1.00	2011-01-20
-	    - first official release
+        - first official release
