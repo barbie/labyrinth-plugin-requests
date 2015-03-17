@@ -1,6 +1,7 @@
 Changes for the Labyrinth-Plugin-Requests
 =========================================
 
+1.06	2015-03-17
         - extended functional test suite.
         - added requestid to request table.
         - updated phrasebook SQL.
