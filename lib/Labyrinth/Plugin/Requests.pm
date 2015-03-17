@@ -183,12 +183,6 @@ sub Delete {
     # remove requests
     my $ids = join(",",@ids);
     $dbi->DoQuery($DELETESQL,{ids=>$ids});
-    my @opts = $dbi->GetQuery('hash','FindOptions',{ids=>$ids});
-
-    # remove options
-    $ids = join(",",map {$_->{optionid}} @opts);
-    $dbi->DoQuery('DeleteOptions',{ids=>$ids});
-    $dbi->DoQuery('DeleteOptImages',{ids=>$ids});
 }
 
 sub SecureSelect {
