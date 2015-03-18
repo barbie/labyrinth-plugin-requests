@@ -15,11 +15,12 @@ WriteMakefile(
     PREREQ_PM           => {
 
         # prereqs
-        'Labyrinth'             => '5.22',
+        'Labyrinth'                 => '5.32',
 
         # build/test prereqs
-        'IO::File'              => '0',
-        'Test::More'            => '0.70'
+        'IO::File'                  => '0',
+        'Labyrinth::Test::Harness'  => '1.02',
+        'Test::More'                => '0.70'
 
     }
 );

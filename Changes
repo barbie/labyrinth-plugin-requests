@@ -2,6 +2,8 @@ Changes for the Labyrinth-Plugin-Requests
 =========================================
 
         - switch to using ParamCheck.
+        - upgraded to Labyrinth-5.32.
+        - added missing test prequisite.
 
 1.07	2015-03-18
         - added more tests around deletion.

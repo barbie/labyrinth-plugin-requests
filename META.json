@@ -24,6 +24,7 @@
         "test" : {
             "requires": {
                 "IO::File": "0",
+                "Labyrinth::Test::Harness": "1.02",
                 "Test::More": "0.70"
             },
             "recommends": {
@@ -36,7 +37,7 @@
         "runtime" : {
             "requires" : {
                 "perl": "5.006",
-                "Labyrinth": "5.22"
+                "Labyrinth": "5.32"
             }
         }
     },
