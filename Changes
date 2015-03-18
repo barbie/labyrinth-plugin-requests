@@ -2,7 +2,7 @@ Changes for the Labyrinth-Plugin-Requests
 =========================================
 
         - added more tests around deletion.
-        - added tests for SecureSelect.
+        - added tests for SecureSelect & SecureName.
 
 1.06	2015-03-17
         - extended functional test suite.
