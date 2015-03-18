@@ -1,6 +1,7 @@
 Changes for the Labyrinth-Plugin-Requests
 =========================================
 
+1.07	2015-03-18
         - added more tests around deletion.
         - added tests for SecureSelect & SecureName.
 
