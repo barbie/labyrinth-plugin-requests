@@ -3,10 +3,7 @@ use strict;
 
 use Data::Dumper;
 use Labyrinth::Test::Harness;
-use Test::More tests => 34;
-
-my (undef,undef,undef,undef,undef,$year) = localtime(time);
-$year += 1900;
+use Test::More tests => 40;
 
 my $test_data = { 
     add => {
@@ -93,6 +90,20 @@ my $test_data = {
           'command' => 'aaaa',
           'onsuccess' => ''
     },
+    'delete' => {
+          'rewrite' => '',
+          'onfailure' => '',
+          'onerror' => '',
+          'actions' => 'Site::Admin',
+          'requestid' => '34',
+          'onsuccess' => '',
+          'layout' => '',
+          'command' => 'admin',
+          'secured' => undef,
+          'content' => 'articles/arts-adminlist.html',
+          'secure' => 'off',
+          'section' => 'arts'
+    },
 };
 
 my @plugins = qw(
@@ -117,7 +128,7 @@ my $res = $loader->prep(
 diag($loader->error)    unless($res);
 
 SKIP: {
-    skip "Unable to prep the test environment", 34  unless($res);
+    skip "Unable to prep the test environment", 40  unless($res);
 
     $res = is($loader->labyrinth(@plugins),1);
     diag($loader->error)    unless($res);
@@ -225,7 +236,7 @@ SKIP: {
     # -------------------------------------------------------------------------
     # Admin Link Delete/Save methods - as we change the db
 
-    # refresh instance
+    # delete a request
     $loader->clear;
     $loader->refresh(
         \@plugins,
@@ -240,4 +251,31 @@ SKIP: {
     #diag("admin1 vars=".Dumper($vars->{data}));
     is_deeply($vars->{data}[0],$test_data->{admin1},'admin1 list variables are as expected');
     is( scalar(@{ $vars->{data} }),60,'request count as expected');
+
+    
+    # delete a request - via Admin
+    $loader->clear;
+    $loader->refresh(
+        \@plugins,
+        { loggedin => 1, loginid => 1 },
+        { doaction => 'Delete', 'LISTED' => 36 } );
+    $res = is($loader->action('Requests::Admin'),1);
+    diag($loader->error)    unless($res);
+    $vars = $loader->vars;
+    #diag("delete vars=".Dumper($vars->{data}));
+    is_deeply($vars->{data}[0],$test_data->{delete},'delete list variables are as expected');
+    is( scalar(@{ $vars->{data} }),59,'request count as expected');
+
+    # delete a request - bad action
+    $loader->clear;
+    $loader->refresh(
+        \@plugins,
+        { loggedin => 1, loginid => 1 },
+        { doaction => 'DoNothing', 'LISTED' => 34 } );
+    $res = is($loader->action('Requests::Admin'),1);
+    diag($loader->error)    unless($res);
+    $vars = $loader->vars;
+    #diag("delete vars=".Dumper($vars->{data}));
+    is_deeply($vars->{data}[0],$test_data->{delete},'delete list variables are as expected');
+    is( scalar(@{ $vars->{data} }),59,'request count as expected');
 }
