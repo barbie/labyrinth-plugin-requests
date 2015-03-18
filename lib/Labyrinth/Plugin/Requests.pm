@@ -48,12 +48,6 @@ my %fields = (
     rewrite     => { type => 0, html => 1 },
 );
 
-my (@mandatory,@allfields);
-for(keys %fields) {
-    push @mandatory, $_     if($fields{$_}->{type});
-    push @allfields, $_;
-}
-
 my @savefields  = qw(section command actions layout content onsuccess onerror onfailure secure rewrite);
 my $INDEXKEY    = 'requestid';
 my $ALLSQL      = 'AllRequests';
@@ -156,13 +150,7 @@ sub Save {
     return  unless AccessUser($LEVEL);
     return  unless AuthorCheck($GETSQL,$INDEXKEY,$LEVEL);
 
-    for(keys %fields) {
-           if($fields{$_}->{html} == 1) { $cgiparams{$_} = CleanHTML($cgiparams{$_}) }
-        elsif($fields{$_}->{html} == 2) { $cgiparams{$_} = CleanTags($cgiparams{$_}) }
-        elsif($fields{$_}->{html} == 3) { $cgiparams{$_} = CleanLink($cgiparams{$_}) }
-    }
-
-    return  if FieldCheck(\@allfields,\@mandatory);
+    return  if ParamCheck(\%fields);
 
     my @fields;
     push @fields, $tvars{data}->{$_}    for(@savefields);
