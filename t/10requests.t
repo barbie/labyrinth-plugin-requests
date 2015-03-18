@@ -3,7 +3,7 @@ use strict;
 
 use Data::Dumper;
 use Labyrinth::Test::Harness;
-use Test::More tests => 40;
+use Test::More tests => 43;
 
 my $test_data = { 
     add => {
@@ -128,7 +128,7 @@ my $res = $loader->prep(
 diag($loader->error)    unless($res);
 
 SKIP: {
-    skip "Unable to prep the test environment", 40  unless($res);
+    skip "Unable to prep the test environment", 43  unless($res);
 
     $res = is($loader->labyrinth(@plugins),1);
     diag($loader->error)    unless($res);
@@ -278,4 +278,14 @@ SKIP: {
     #diag("delete vars=".Dumper($vars->{data}));
     is_deeply($vars->{data}[0],$test_data->{delete},'delete list variables are as expected');
     is( scalar(@{ $vars->{data} }),59,'request count as expected');
+
+
+    # -------------------------------------------------------------------------
+    # Local Methods
+
+    # drop downs
+    is(Labyrinth::Plugin::Requests::SecureSelect(),     '<select id="typeid" name="typeid"><option value="1">off</option><option value="2">on</option><option value="3">either</option><option value="4">both</option></select>');
+    is(Labyrinth::Plugin::Requests::SecureSelect(1),    '<select id="typeid" name="typeid"><option value="1" selected="selected">off</option><option value="2">on</option><option value="3">either</option><option value="4">both</option></select>');
+    is(Labyrinth::Plugin::Requests::SecureSelect(undef),'<select id="typeid" name="typeid"><option value="1">off</option><option value="2">on</option><option value="3">either</option><option value="4">both</option></select>');
+
 }
