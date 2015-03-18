@@ -3,7 +3,7 @@ use strict;
 
 use Data::Dumper;
 use Labyrinth::Test::Harness;
-use Test::More tests => 49;
+use Test::More tests => 53;
 
 my $test_data = { 
     add => {
@@ -128,7 +128,7 @@ my $res = $loader->prep(
 diag($loader->error)    unless($res);
 
 SKIP: {
-    skip "Unable to prep the test environment", 49  unless($res);
+    skip "Unable to prep the test environment", 53  unless($res);
 
     $res = is($loader->labyrinth(@plugins),1);
     diag($loader->error)    unless($res);
@@ -242,6 +242,22 @@ SKIP: {
         \@plugins,
         { loggedin => 1, loginid => 1 },
         { 'LISTED' => 61 } );
+    $res = is($loader->action('Requests::Delete'),1);
+    diag($loader->error)    unless($res);
+
+    $res = is($loader->action('Requests::Admin'),1);
+    diag($loader->error)    unless($res);
+    $vars = $loader->vars;
+    #diag("admin1 vars=".Dumper($vars->{data}));
+    is_deeply($vars->{data}[0],$test_data->{admin1},'admin1 list variables are as expected');
+    is( scalar(@{ $vars->{data} }),60,'request count as expected');
+
+    # empty delete request
+    $loader->clear;
+    $loader->refresh(
+        \@plugins,
+        { loggedin => 1, loginid => 1 },
+        { 'LISTED' => '' } );
     $res = is($loader->action('Requests::Delete'),1);
     diag($loader->error)    unless($res);
 
